@@ -21,6 +21,8 @@
       </div>
 </section> -->
 
+
+
 <!-- -----------------------------modal  Formulaio agregar/ editar Experiencia Laboral --------------------------- -->
 
 <div
@@ -164,7 +166,7 @@
                     >
                     </i
                   ></span>
-                  <!-- aca donde ponia el input ahora lo paso como un select para que pueda traer el tipo de trabajo  -->
+                  
                   <select formControlName="trabajos">
                     <option [ngValue]="null">Elija tipo de trabajo</option>
                     <option
@@ -199,13 +201,13 @@
   <div class="container mt-5">
     <button
       type="button"
-      class="btn btn-primary"
+      class="btn btn-secondary btn-sm"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal3"
       *ngIf="ulogged != ''"
     >
       <i class="fa-solid fa-pen-to-square"></i>
-    </button>
+    </button> 
 
     <div class="col-lg-6">
       <div class="card">
@@ -234,7 +236,7 @@
                     ></i>
                   </td>
                 </button>
-               <!-- boton para eliminar -->
+                <!-- boton para eliminar -->
                 <button *ngIf="ulogged != ''">
                   <td>
                     <i

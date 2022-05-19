@@ -1,13 +1,13 @@
 <!-- boton para editar o agregar cuando esta logeado -->
 <button
       type="button"
-      class="btn btn-primary"
+      class="btn btn-secondary btn-sm"
       data-bs-toggle="modal"
       data-bs-target="#exampleModal4"
       *ngIf="ulogged != ''"
     >
       <i class="fa-solid fa-pen-to-square"></i>
-    </button> 
+</button> 
 
 <!-- Educacion lista -->
 <article>
@@ -29,31 +29,7 @@
           <td>{{ item.fechaFin }}</td>
           <td>{{ item.tipoEducacion.nombretedu}}
           </td> 
-          <!-- boton para editar educacion -->
-     <!--       <button
-           type="button"
-           class="btn btn-secondary"
-           data-bs-toggle="modal"
-           data-bs-target="#exampleModal4"
-           *ngIf="ulogged != ''"
-         >
-           <td>
-             <i
-               (click)="editarEducacion(item)"
-               class="fa-regular fa-pen-to-square text-info"
-             ></i>
-           </td>
-         </button>
-           
-           <button *ngIf="ulogged != ''">
-            <td>
-              <i
-                (click)="eliminarEducacion(item.id)"
-                class="fa-regular fa-trash-can text-danger"
-              ></i>
-            </td>
-          </button> -->
-          
+          <!-- boton para editar educacion -->          
               <button
                   type="button"
                   class="btn btn-secondary"
@@ -248,10 +224,6 @@ aria-hidden="true"
 <!-- fin:-----educacion modal -->
 
 
-
-
-
-
 <!-- inicio:----card acerca de mi -->
 <article>
   <section>
@@ -283,7 +255,7 @@ aria-hidden="true"
               <h5 class="card-title">Osteopata</h5>
               <h5 class="card-title">Programador</h5>
               <p>
-                <!-- <a href="#educ">Educaciones</a> -->
+                <a href="#educ">Educaciones</a>
               </p>
               <p>
                 <a href="#expel">Experiencia Laboral</a>

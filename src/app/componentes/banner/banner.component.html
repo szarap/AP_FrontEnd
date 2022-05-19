@@ -1,10 +1,12 @@
 
-          <section class="banner">
+         
+         <section class="banner">
             <article class="item item__position">
 
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" *ngIf="ulogged!=''" >
+              <!-- boton para editar el banner -->
+              <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2" *ngIf="ulogged!=''" >
                 <i class="fa-solid fa-pen-to-square"></i>
-              </button>
+              </button> -->
 
                 <img class="perfil__foto" src="../assets/foto_perfil-cut.jpg"alt="foto perfil">
                 <div *ngFor="let datos of databanner"class="perfil__texto">                    
@@ -12,13 +14,14 @@
                     <p class="p3">{{datos.nombre}}</p>                     
                     <p class="p4">{{datos.apellido}}</p>
                     <p class="p5">Programador Full Stack Jr</p>
-                <!--  <p class="p5">{{datos.experiencias[0].nombreExperiencia}}</p>  -->
+                
                 </div>                
             </article>
           </section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Modal  banner-->
+
+<!-- <div class="modal fade" id="exampleModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -26,14 +29,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- `<h3>Nombre:</h3>
-          {{ message }}`
-        <h3>Apellido:</h3>
-        <app-formedicion></app-formedicion> -->
+      --------------------
       </div>
     </div>
   </div>
 </div>
-
+ -->
 
 

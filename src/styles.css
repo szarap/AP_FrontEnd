@@ -25,6 +25,9 @@ html{
 body{
     margin:0;
     overflow-x: hidden;
+    background: #659999;  
+    background: -webkit-linear-gradient(to right, #f4791f, #659999); 
+    background: linear-gradient(to right, #f4791f, #659999);
 }
 
 img{
@@ -39,9 +42,19 @@ img{
 }
 /* -----------------------header-------------------------------- */
 /* (grilla de 3 columnas x 5 filas) */
-
+.header{
+    background: #0B486B;  
+    background: -webkit-linear-gradient(to left, #F56217, #0B486B);
+    background: linear-gradient(to left, #F56217, #0B486B); 
+}
 .item{
     padding: 0.75rem;
+    color: #FFF;
+    text-shadow: 2px 7px 5px rgba(44, 83, 100, 0.53);
+}
+.item p b{
+    color: aliceblue;
+    font-size: 1.2em;
 }
 /* -------------------- Posicionamiento de la grilla --------------------- */ 
 
@@ -88,11 +101,11 @@ font-size: 1em;
 /*------------------ hijo 2  */ 
 .fa-facebook{
     color: rgb(14,142,241);
-    font-size: 3rem;    
+    font-size: 2rem;    
 }
 
 .fa-instagram {
-    font-size: 3rem;
+    font-size: 2rem;
     color: transparent;
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
@@ -101,12 +114,13 @@ font-size: 1em;
 }
 
 .fa-linkedin{
-    font-size: 3rem;
+    font-size: 2rem;
     color:rgb(2,117,183)
 }
 
 .fa-github{
-    font-size: 3rem;
+    font-size: 2rem;
+    color: #000;
 }
 /*------------------ hijo 3 */
 .item .item__3{
@@ -114,10 +128,11 @@ font-size: 1em;
 }
 /*------------------ hijo 4 */
 .banner {
-    background-image: url("./assets/preview.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: #0F2027;  
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    
+
     height: 70vh;
     font-family: 'Anybody', cursive;
     font-family: 'Indie Flower', cursive;

@@ -1,43 +1,70 @@
-<header class="contenedor">
-    <section class="grid">
-        <article class="item">
-            <img class="item__logo" src="../assets/celeste_AP-removebg-preview.png" alt="Logo de Argenitna Programa">
-        </article>
-        <article class="item">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>       
-            <i class="fa-brands fa-github"></i>
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-Login
-</button>
+<header class="contenedor header">
+  <section class="grid">
+    <article class="item">
+      <img
+        class="item__logo"
+        src="../assets/celeste_AP-removebg-preview.png"
+        alt="Logo de Argenitna Programa"
+      />
+    </article>
+    <article class="item">
+       <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i> 
+      <!-- Button trigger modal login/logout-->
+      <button
+        type="button"
+        class="btn item"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Login
+      </button>
 
-<button type="button" class="btn btn-primary item" *ngIf="ulogged!=''" (click)="salir()">
-  Salir
-</button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Igresar</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button
+        type="button"
+        class="btn item"
+        *ngIf="ulogged != ''"
+        (click)="salir()"
+      >
+        Logout
+      </button>
+
+      <!-- Modal Login -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ingresar</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <app-login></app-login>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-            <app-login></app-login>
-        </div>        
-      </div>
-    </div>
-  </div>           
-        </article>
-        <article class="item"*ngFor="let datos of databanner">
-            <p><b>{{datos.proyectos[2].nombre}}</b></p>            <!-- 
-            <button type="button" class="btn btn-success btn-sm" *ngIf="ulogged!=''">
-              <i class="fa-solid fa-pen-to-square"></i>
-            </button> -->            
-        </article>
-        </section>
-
+      </div> 
+    </article>
+    <article class="item" *ngFor="let datos of databanner">
+<!--       <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i> -->
+      <p>
+        <b>{{ datos.proyectos[2].nombre }}</b>
+      </p>
+    </article>
+  </section>
 </header>
