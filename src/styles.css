@@ -49,13 +49,14 @@ img{
 }
 .item{
     padding: 0.75rem;
-    color: #FFF;
+    color: #f8f8f8;
     text-shadow: 2px 7px 5px rgba(44, 83, 100, 0.53);
 }
 .item p b{
     color: aliceblue;
     font-size: 1.2em;
 }
+
 /* -------------------- Posicionamiento de la grilla --------------------- */ 
 
 .grid{
@@ -92,6 +93,11 @@ display: flex;
 justify-content: center;
 font-size: 1em;
 }
+.form-label{
+    text-shadow: none;
+    color: #0B486B;
+}
+
 
 
 /*------------------ hijo 1*/
@@ -203,4 +209,171 @@ font-size: 1em;
 }
 .red-icon{
     color:#dc3545;
+}
+
+.h5{
+    font-size: 1em;
+}
+
+
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    background-color: #1D1D1D;
+    height: auto;
+    width: 92vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    color: #f7f7f9;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #fc4a1a;  
+    background: -webkit-linear-gradient(to top, #f7b733, #fc4a1a); 
+    background: linear-gradient(to top, #f7b733, #fc4a1a); 
+
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #0F2027;  
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+}
+
+.fl-table tr:nth-child(even) {
+    color: #f7f7f9;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+.container__habilidades{    
+    background: #0F2027;  
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027);
+    display:flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+h3,
+h4{
+    font-size: 1em;
+    text-align: center;
+    justify-content: center;
+    color: #f8f8f8;
+    padding-top: 1rem;
+}
+
+.orden_tarjertas{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5vh;
+
+}
+.card{
+    width: 30vw;
+    height: auto;
+    align-items: center;
+    background: #fc4a1a;  
+    background: -webkit-linear-gradient(to top, #f7b733, #fc4a1a); 
+    background: linear-gradient(to top, #f7b733, #fc4a1a); 
 }

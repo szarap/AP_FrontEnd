@@ -13,8 +13,6 @@ export class FormedicionComponent implements OnInit {
 
   ulogged:String=""; 
 
-  /* message!: string;
-  editMessage!: string; */
 
   constructor(private personaService:PersonaService,  
               private routes: Router, 
@@ -22,18 +20,11 @@ export class FormedicionComponent implements OnInit {
 
 
     ngOnInit(): void {
-      //this.personaService.customMessage.subscribe(msg => this.message = msg);
       this.ulogged=this.LoginService.getUserLogged(); 
+      
     }
-
-    /* changeMessage() {
-      this.personaService.changeMessage(this.editMessage);
-    } */
-
-
+    
   }
-
-
 
 
 

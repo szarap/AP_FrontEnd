@@ -1,20 +1,188 @@
-<!-- <form>
-  <div class="mb-3">
-    <label for="exampleInputNombre" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="nombrelHelp" [(ngModel)]="nombrepers" [ngModelOptions]="{standalone: true}">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputApellido" class="form-label">Apellido</label>
-    <input type="text" class="form-control" id="exampleInputApellido" aria-describedby="apellidoHelp"[(ngModel)]="apellidopers" [ngModelOptions]="{standalone: true}">
+<!--inicio  Proyectos  -->
+<article>
+  <h2>Mis Proyectos</h2>
+  <section class="orden_tarjertas">
+  <div class="card">
+    <img src="./assets/cam.png" class="card-img-top" alt="imagen de cam">
+    <div class="card-body">
+      <p class="card-text">CAM "Cuerpo Alma Vida"</p>
+    </div>
   </div>
   
-  <button type="submit" class="btn btn-primary" (click)="sendMessage()">Enviar mensaje</button>
-  
-</form>  -->
+  <div class="card">
+    <img src="./assets/wai.png" class="card-img-top" alt="imagen WAIHEKE">
+    <div class="card-body">
+      <p class="card-text">WAIHEKE CROSSFIT</p>
+    </div>
+  </div>
 
-<!-- `<h1>Ingresar Nombre:</h1>
-  {{ message }} <br />
-  <input type="text" placeholder="Introduce el nombre a editar"
-  [(ngModel)]="editMessage">
-  <button (click)="changeMessage()">Enviar</button>` -->
+  <div class="card">
+    <img src="./assets/apr.png" class="card-img-top" alt="imagen de Argentina Programa">
+    <div class="card-body">
+      <p class="card-text">Argentina Programa</p>
+    </div>
+  </div>
+</section>
+</article>
+<!-- fin proyectos -->
+
+
+
+<!-- hard Skills -->
+<section class="container__habilidades">
+<h3>Proyecto Porfolio Argentina Programa edicion Asincronica, creado por Pablo E. Gonzalez</h3>
+<h4>TECNOLOGIAS UTILIZADAS</h4>
+  <div>
+    <circle-progress
+      [percent]="75"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/html.png'"
+      [showImage]="true"
+      [imageHeight]="30"
+      [imageWidth]="30"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="75"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/css3.png'"
+      [showImage]="true"
+      [imageHeight]="30"
+      [imageWidth]="30"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="70"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/js.png'"
+      [showImage]="true"
+      [imageHeight]="30"
+      [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="65"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/angular.png'"
+      [showImage]="true"
+      [imageHeight]="40"
+      [imageWidth]="35"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="60"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/java.png'"
+      [showImage]="true"
+      [imageHeight]="25"
+      [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="60"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/mysql.png'"
+      [showImage]="true"
+      [imageHeight]="25"
+      [imageWidth]="38"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="60"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/github.png'"
+      [showImage]="true"
+      [imageHeight]="30"
+      [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div> 
+  <div>
+    <circle-progress
+      [percent]="60"
+      [radius]="30"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'"
+      [innerStrokeColor]="'#fc4a1a'"
+      [animation]="true"
+      [animationDuration]="1000"
+      [showSubtitle]="false"
+      [imageSrc]="'./assets/springboot.png'"
+      [showImage]="true"
+      [imageHeight]="30"
+      [imageWidth]="60"
+      [backgroundColor]="'#cbdfe6 '"
+    >
+    </circle-progress>
+  </div>
+</section> 
 

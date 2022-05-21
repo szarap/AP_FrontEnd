@@ -15,6 +15,7 @@ export class PersonaService {
   private ApiurlEdu="/api/educacion/";
   private ApiurlTipoTrab="/api/tipoTrabajo/";
   private ApiurlTipoEdu="/api/tipoEducacion/";
+  private ApiurlProyecto="/api/proyecto/";
 
   
   constructor(private http: HttpClient,  
@@ -69,6 +70,23 @@ export class PersonaService {
     return this.http.get(this.ApiurlTipoEdu + "ver");
     } 
 
+    //METODOS PARA EL CRUD DE Proyectos 
+
+    getListProyecto():Observable<any>{
+      return this.http.get(this.ApiurlProyecto + "ver");      
+    } 
+
+    deleteProyecto(id: number):Observable<any>{
+      return this.http.delete(this.ApiurlProyecto + "delete/" + id);
+    }
+
+    saveProyecto(proyecto: String): Observable<any>{
+      return this.http.post(this.ApiurlProyecto + "new", proyecto);
+    }
+
+    updateProyecto(id: number, proyecto: any): Observable<any>{
+      return this.http.put(this.ApiurlProyecto + "editar", proyecto);
+    }
 
 }
   

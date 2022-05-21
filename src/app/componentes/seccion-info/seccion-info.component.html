@@ -1,25 +1,46 @@
-<!-- boton para editar o agregar cuando esta logeado -->
-<button
-      type="button"
-      class="btn btn-secondary btn-sm"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal4"
-      *ngIf="ulogged != ''"
-    >
-      <i class="fa-solid fa-pen-to-square"></i>
-</button> 
+<!--------------------------------------------- card acerca de mi -->
+<div class="container">
+  <div class="container_content">
+    <div class="container_content_inner">
+      <div class="title">
+        <h1>Acerca de mi...</h1>
+      </div>
+      <div class="par">
+        <p>Fisioterapeuta</p>
+        <p>Osteopata</p>
+        <p>Programador</p>
+        <p class="card-text">Curioso</p>
+        <p class="card-text">Inquieto</p>
+        <p class="card-text">Amante del Deporte y la Naturaleza</p>
+        <p><a href="#educ">Educaciones</a></p>
+        <p><a href="#expel">Experiencia Laboral</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="container_outer_img">
+    <div class="img-inner">
+      <img src='../assets/1688.jpg' alt="" class="container_img" />
+    </div>
+  </div>
+</div>
+<div class="overlay"></div>
+<!-- ---------------------------------------------------fin card acerca de mi -->
 
-<!-- Educacion lista -->
+<!-- inicio tabla educacion -->
 <article>
-  <section class="contenedor">
-    <h3 id="educ">Educacion</h3>
-    <table class="table">
+  <h2>Educacion <i class="fa-regular fa-pen-to-square text-info" data-bs-toggle="modal" data-bs-target="#exampleModal4"
+      *ngIf="ulogged != ''"></i></h2>
+
+  <div class="table-wrapper containerEdu">
+    <table class="fl-table ">
       <thead>
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Inicio</th>
           <th scope="col">Fin</th>
           <th scope="col">Tipo de Educacion</th>
+          <th scope="col" *ngIf="ulogged != ''">Editar</th>
+          <th scope="col" *ngIf="ulogged != ''">Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -27,266 +48,112 @@
           <td>{{ item.nombre }}</td>
           <td>{{ item.fechaInicio }}</td>
           <td>{{ item.fechaFin }}</td>
-          <td>{{ item.tipoEducacion.nombretedu}}
-          </td> 
-          <!-- boton para editar educacion -->          
-              <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal4"
-                  *ngIf="ulogged != ''"
-                >
-                  <td>
-                    <i
-                      (click)="editarEducacion(item)"
-                      class="fa-regular fa-pen-to-square text-info"
-                    ></i>
-                  </td>
-                </button>
-            
-               <button *ngIf="ulogged != ''">
-                <td>
-                  <i
-                    (click)="eliminarEducacion(item.id)"
-                    class="fa-regular fa-trash-can text-danger"
-                  ></i>
-                </td>
-              </button>
-
-
-
-          
+          <td>{{ item.tipoEducacion.nombretedu}}</td>
+          <!-- boton para editar educacion -->
+          <td data-bs-toggle="modal" data-bs-target="#exampleModal4" *ngIf="ulogged != ''">
+            <i (click)="editarEducacion(item)" class="fa-regular fa-pen-to-square text-info"></i>
+          </td>
+          <!-- boton para eliminar educacion -->
+          <td *ngIf="ulogged != ''">
+            <i (click)="eliminarEducacion(item.id)" class="fa-regular fa-trash-can text-danger"></i>
+          </td>
         </tr>
-      </tbody>
+      <tbody>
     </table>
-  </section>
+  </div>
 </article>
+<!-- fin tabla educacion -->
 
-  <!-- inicio: -----educacion modal -->
-<!-- -----------------------------modal  Formulaio agregar/ editar Educacion --------------------------- -->
+<!-- ------------------inicio:-------modal  Formulario agregar/ editar Educacion ----------------------------->
+<div class="modal fade" id="exampleModal4" data-bs-backdrop="static"
+  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-<div
-class="modal fade"
-id="exampleModal4"
-data-bs-backdrop="static"
-data-bs-keyboard="false"
-tabindex="-1"
-aria-labelledby="staticBackdropLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="staticBackdropLabel">
-        Educacion
-      </h5>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-2"></div>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">educacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card body">
+                  <h5 class="titulo">{{ accion | uppercase }} Educacion</h5>
 
-    <div class="row mt-4">
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card body">
-            <h5 class="titulo">{{ accion | uppercase }} Educacion</h5>
+                  <form [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
+                    <!-- div nombre -->
+                    <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text">
+                        <i class="fa-solid fa-user" [class.green-icon]="
+                          this.educations.get('nombre')?.valid
+                        " [class.red-icon]="
+                          this.educations.get('nombre')?.invalid &&
+                          this.educations.get('nombre')?.touched
+                        "></i>
+                      </span>
+                      <input formControlName="nombre" type="text" class="form-control"
+                        placeholder="Nombre de la educacion" />
+                    </div>
 
-            <form [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
-              <!-- div nombre -->
-              <div class="input-group input-group-lg mb-3">
-                <span class="input-group-text">
-                  <i
-                    class="fa-solid fa-user"
-                    [class.green-icon]="
-                      this.educations.get('nombre')?.valid
-                    "
-                    [class.red-icon]="
-                      this.educations.get('nombre')?.invalid &&
-                      this.educations.get('nombre')?.touched
-                    "
-                  ></i>
-                </span>
-                <input
-                  formControlName="nombre"
-                  type="text"
-                  class="form-control"
-                  placeholder="Nombre de la educacion"
-                />
-              </div>
-              <!-- div fecha inicio -->
-              <div class="input-group input-group-lg mb-3">
-                <span class="input-group-text"
-                  ><i
-                    class="fa-solid fa-calendar-days"
-                    [class.green-icon]="
-                      this.educations.get('fechaInicio')?.valid
-                    "
-                    [class.red-icon]="
-                      this.educations.get('fechaInicio')?.invalid &&
-                      this.educations.get('fechaInicio')?.touched
-                    "
-                  >
-                  </i
-                ></span>
-                <input
-                  formControlName="fechaInicio"
-                  type="date"
-                  maxlength="10"
-                  class="form-control"
-                  placeholder="aaaa-mm-dd"
-                />
-              </div>
-              <!-- div fecha fin -->
-              <div class="input-group input-group-lg mb-3">
-                <span class="input-group-text"
-                  ><i
-                    class="fa-solid fa-calendar-days"
-                    [class.green-icon]="
-                      this.educations.get('fechaFin')?.valid
-                    "
-                    [class.red-icon]="
-                      this.educations.get('fechaFin')?.invalid &&
-                      this.educations.get('fechaFin')?.touched
-                    "
-                  >
-                  </i
-                ></span>
-                <input
-                  formControlName="fechaFin"
-                  type="date"
-                  maxlength="10"
-                  class="form-control"
-                  placeholder="aaaa-mm-dd"
-                />
-              </div>
-            
-              <!--------------------- div tipo de educacion -->
-              
-              <div class="input-group input-group-lg mb-3">
-                <span class="input-group-text"
-                  ><i
-                    class="fa-solid fa-briefcase"
-                    [class.green-icon]="
-                      this.educations.get('tipoEducacion')?.valid
-                    "
-                    [class.red-icon]="
-                      this.educations.get('tipoEducacion')?.invalid &&
-                      this.educations.get('tipoEducacion')?.touched
-                    "
-                  >
-                  </i
-                ></span>
-                
-                <select formControlName="tipoEducacion">
-                  <option [ngValue]="null">
-                    Elija tipo de educacion</option>
-                  <option
-                    *ngFor="let eleccion of tipoeducaciones "
-                    [ngValue]="eleccion"
-                  >
-                  {{ eleccion.nombretedu }} 
+                    <!-- div fecha inicio -->
+                    <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
+                          this.educations.get('fechaInicio')?.valid
+                        " [class.red-icon]="
+                          this.educations.get('fechaInicio')?.invalid &&
+                          this.educations.get('fechaInicio')?.touched
+                        ">
+                        </i></span>
+                      <input formControlName="fechaInicio" type="date" maxlength="10" class="form-control"
+                        placeholder="aaaa-mm-dd" />
+                    </div>
 
-                  </option>
-                </select>
+                    <!-- div fecha fin -->
+                    <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
+                          this.educations.get('fechaFin')?.valid
+                        " [class.red-icon]="
+                          this.educations.get('fechaFin')?.invalid &&
+                          this.educations.get('fechaFin')?.touched
+                        ">
+                        </i></span>
+                      <input formControlName="fechaFin" type="date" maxlength="10" class="form-control"
+                        placeholder="aaaa-mm-dd" />
+                    </div>
+    
+                    <!--------------------- div tipo de educacion -->    
+                    <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text"><i class="fa-solid fa-briefcase" [class.green-icon]="
+                          this.educations.get('tipoEducacion')?.valid
+                        " [class.red-icon]="
+                          this.educations.get('tipoEducacion')?.invalid &&
+                          this.educations.get('tipoEducacion')?.touched
+                        ">
+                        </i></span>
+                            
+                      <select formControlName="tipoEducacion">
+                        <option [ngValue]="null">
+                          Elija tipo de educacion</option>
+                        <option *ngFor="let eleccion of tipoeducaciones " [ngValue]="eleccion">
+                          {{ eleccion.nombretedu }}    
+                        </option>
+                      </select>
+                    </div>
+    
+                    <!--div boton aceptar -->
+                    <div class="d-grid gap-2">
+                      <button [disabled]="this.educations.invalid" type="submit" class="btn btn-success btn-lg">
+                        <i class="fa-solid fa-database"></i>&nbsp; Aceptar
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
-
-              <!--div boton aceptar -->
-              <div class="d-grid gap-2">
-                <button
-                  [disabled]="this.educations.invalid"
-                  type="submit"
-                  class="btn btn-success btn-lg"
-                  >
-                  <i class="fa-solid fa-database"></i>&nbsp; Aceptar
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>      
     </div>
   </div>
 </div>
-</div>
-
-
-
-                
 <!-- fin:-----educacion modal -->
-
-
-<!-- inicio:----card acerca de mi -->
-<article>
-  <section>
-    <ul class="cards">
-      <li>
-        <a href="" class="card">
-          <img src="./assets/iceberg_2.png" class="card__image" alt="" />
-          <div class="card__overlay">
-            <div class="card__header">
-              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                <path />
-              </svg>
-              <img
-                class="card__thumb"
-                src="../assets/foto_perfil-cut.jpg"
-                alt=""
-              />
-              <div class="card__header-text">
-                <h3 class="card__title">P>blo</h3>
-                <span class="card__status">Acerca de mi...</span>
-              </div>
-            </div>
-            <p class="card__description"></p>
-            <div class="card-body">
-              <!-- <a *ngIf="ulogged != ''"
-                ><i class="fa-solid fa-pen-to-square item__3"></i
-              ></a> -->
-              <h5 class="card-title">Fisioterapeuta</h5>
-              <h5 class="card-title">Osteopata</h5>
-              <h5 class="card-title">Programador</h5>
-              <p>
-                <a href="#educ">Educaciones</a>
-              </p>
-              <p>
-                <a href="#expel">Experiencia Laboral</a>
-              </p>
-              <p class="card-text">Curioso</p>
-              <p class="card-text">Inquieto</p>
-              <p class="card-text">Amante del Deporte y la Naturaleza</p>
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </section>
-</article>
-     <!-- <article class="item">
-      <span>Acerca de mi...</span>
-      <a *ngIf="ulogged!=''"><i class="fa-solid fa-pen-to-square item__3"></i></a>
-      <p>Programador, Fisioterapeuta, Osteopata, curioso, inquieto, en movimiento constante</p>
-  </article> -->
-      <!--   <article class="item">
-      <span>Educación:</span>
-      <a *ngIf="ulogged!=''"><i class="fa-solid fa-pen-to-square item__3"></i></a>
-      <p>Programador Full Stack "Argentina Programa"</p>
-      <p>Html y Css "Coder House"</p>
-      <p>JavaScript "Coder House"</p>
-      <p>Lic en Kinesiología y Fisiotepia "Univiersidad Nacional de Cordoba"</p>
-      <p>Posgrado en Osteopatia "UNC"</p>
-  </article> -->
-      <!-- <article class="item">
-      <span>Experiencia:</span>
-      <a *ngIf="ulogged!=''"><i class="fa-solid fa-pen-to-square item__3"></i></a>
-      <p>Programador Freelance</p>
-      <p>10 años de Experiencia dentro de la rama de la Salud</p>        
-  </article> -->
