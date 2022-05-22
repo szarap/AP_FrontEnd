@@ -364,16 +364,21 @@ h4{
 }
 
 .orden_tarjertas{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+    grid-auto-rows: 20vw;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 5vh;
 
 }
 .card{
-    width: 30vw;
+    width: auto;
     height: auto;
     align-items: center;
     background: #fc4a1a;  
     background: -webkit-linear-gradient(to top, #f7b733, #fc4a1a); 
-    background: linear-gradient(to top, #f7b733, #fc4a1a); 
+    background: linear-gradient(to top, #f7b733, #fc4a1a);
+    margin: 0 1vw; 
 }

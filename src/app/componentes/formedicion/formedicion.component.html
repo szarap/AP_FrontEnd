@@ -1,188 +1,174 @@
-<!--inicio  Proyectos  -->
+<!--inicio  card Proyectos  -->
 <article>
-  <h2>Mis Proyectos</h2>
-  <section class="orden_tarjertas">
-  <div class="card">
-    <img src="./assets/cam.png" class="card-img-top" alt="imagen de cam">
-    <div class="card-body">
-      <p class="card-text">CAM "Cuerpo Alma Vida"</p>
-    </div>
-  </div>
-  
-  <div class="card">
-    <img src="./assets/wai.png" class="card-img-top" alt="imagen WAIHEKE">
-    <div class="card-body">
-      <p class="card-text">WAIHEKE CROSSFIT</p>
-    </div>
-  </div>
+  <h2>Mis Proyectos <i class="fa-regular fa-pen-to-square text-info" data-bs-toggle="modal"
+      data-bs-target="#exampleModal5" *ngIf="ulogged != ''"></i></h2>
 
-  <div class="card">
-    <img src="./assets/apr.png" class="card-img-top" alt="imagen de Argentina Programa">
-    <div class="card-body">
-      <p class="card-text">Argentina Programa</p>
+  <section class="orden_tarjertas">
+
+    <div class="card" *ngFor="let proye of listdeproyectos">    
+        <img src="{{proye.fotoproyecto}}" class="card-img-top" alt="imagen de cam">    
+      <div class="card-body">
+        <p class="card-text">{{proye.nombre}}</p>
+        <p class="card-text">{{proye.fechaFin}}</p>
+      </div>
+      <div>
+        <!-- boton para editar experiencia -->
+        <p data-bs-toggle="modal" data-bs-target="#exampleModal5"*ngIf="ulogged != ''">
+          <i (click)="editarProyecto(proye)" class="fa-regular fa-pen-to-square text-info"></i>
+        </p>
+        <!-- boton para eliminar -->
+        <p *ngIf="ulogged != ''">
+          <i (click)="eliminarProyecto(proye.id)" class="fa-regular fa-trash-can text-danger"></i>
+        </p>
+      </div>
+        <!-- <td data-bs-toggle="modal" data-bs-target="#exampleModal5"*ngIf="ulogged != ''">
+          <i (click)="editarProyecto(proye)" class="fa-regular fa-pen-to-square text-info"></i>
+        </td> -->
+         <!-- <td *ngIf="ulogged != ''">
+          <i (click)="eliminarProyecto(proye.id)" class="fa-regular fa-trash-can text-danger"></i>
+        </td> --> 
+    </div>
+  </section>
+</article>
+<!-- fin card proyectos -->
+
+<!-- inicio modal de proyectos -->
+<div class="modal fade" id="exampleModal5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">
+          Mis Proyectos
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row mt-4">
+          <!-- <h5 class="titulo">{{ accion | uppercase }} PROYECTOS</h5> -->
+          <form [formGroup]="proy" (ngSubmit)="guardarProyecto()">
+            <!-- div nombre -->
+            <div class="input-group input-group-lg mb-3">
+              <span class="input-group-text">
+                <i class="fa-solid fa-user" [class.green-icon]="
+                          this.proy.get('nombre')?.valid
+                          " [class.red-icon]="
+                          this.proy.get('nombre')?.invalid &&
+                          this.proy.get('nombre')?.touched
+                        "></i>
+              </span>
+              <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre del Proyecto" />
+            </div>
+            <!-- div fecha fin -->
+            <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
+                            this.proy.get('fechaFin')?.valid
+                          " [class.red-icon]="
+                            this.proy.get('fechaFin')?.invalid &&
+                            this.proy.get('fechaFin')?.touched
+                          ">
+                        </i></span>
+                      <input formControlName="fechaFin" type="date" maxlength="10" class="form-control"
+                        placeholder="aaaa-mm-dd" />
+            </div>
+
+            <!-- div FOTO -->
+                  <div class="input-group input-group-lg mb-3">
+                    <span class="input-group-text">
+                      <i class="fa-solid fa-image" [class.green-icon]="
+                          this.proy.get('fotoproyecto')?.valid
+                        " [class.red-icon]="
+                          this.proy.get('fotoproyecto')?.invalid &&
+                          this.proy.get('fotoproyecto')?.touched
+                        "></i>
+                    </span>
+                    <input formControlName="fotoproyecto" type="text" class="form-control"
+                      placeholder="" />
+                  </div>
+
+              <!--div boton aceptar -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg">
+                  <i class="fa-solid fa-database"></i>&nbsp; Aceptar
+                </button><!-- [disabled]="this.proy.invalid" --> 
+              </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-</article>
-<!-- fin proyectos -->
+</div>
+
+
+<!-- fin modal de proyectos -->
+
+
+
+
 
 
 
 <!-- hard Skills -->
 <section class="container__habilidades">
-<h3>Proyecto Porfolio Argentina Programa edicion Asincronica, creado por Pablo E. Gonzalez</h3>
-<h4>TECNOLOGIAS UTILIZADAS</h4>
+  <h3>Proyecto Porfolio Argentina Programa edicion Asincronica, creado por Pablo E. Gonzalez</h3>
+  <h4>TECNOLOGIAS UTILIZADAS</h4>
   <div>
-    <circle-progress
-      [percent]="75"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/html.png'"
-      [showImage]="true"
-      [imageHeight]="30"
-      [imageWidth]="30"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="75"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/css3.png'"
-      [showImage]="true"
-      [imageHeight]="30"
-      [imageWidth]="30"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="70"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/js.png'"
-      [showImage]="true"
-      [imageHeight]="30"
-      [imageWidth]="50"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="65"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/angular.png'"
-      [showImage]="true"
-      [imageHeight]="40"
-      [imageWidth]="35"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="60"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/java.png'"
-      [showImage]="true"
-      [imageHeight]="25"
-      [imageWidth]="50"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="60"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/mysql.png'"
-      [showImage]="true"
-      [imageHeight]="25"
-      [imageWidth]="38"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="60"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/github.png'"
-      [showImage]="true"
-      [imageHeight]="30"
-      [imageWidth]="50"
-      [backgroundColor]="'#cbdfe6 '"
-    >
-    </circle-progress>
-  </div> 
-  <div>
-    <circle-progress
-      [percent]="60"
-      [radius]="30"
-      [outerStrokeWidth]="4"
-      [innerStrokeWidth]="2"
-      [outerStrokeColor]="'#0F2027'"
-      [innerStrokeColor]="'#fc4a1a'"
-      [animation]="true"
-      [animationDuration]="1000"
-      [showSubtitle]="false"
-      [imageSrc]="'./assets/springboot.png'"
-      [showImage]="true"
-      [imageHeight]="30"
-      [imageWidth]="60"
-      [backgroundColor]="'#cbdfe6 '"
-    >
+    <circle-progress [percent]="75" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/html.png'" [showImage]="true" [imageHeight]="30" [imageWidth]="30"
+      [backgroundColor]="'#cbdfe6 '">
     </circle-progress>
   </div>
-</section> 
-
+  <div>
+    <circle-progress [percent]="75" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/css3.png'" [showImage]="true" [imageHeight]="30" [imageWidth]="30"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="70" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/js.png'" [showImage]="true" [imageHeight]="30" [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="65" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/angular.png'" [showImage]="true" [imageHeight]="40" [imageWidth]="35"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="60" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/java.png'" [showImage]="true" [imageHeight]="25" [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="60" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/mysql.png'" [showImage]="true" [imageHeight]="25" [imageWidth]="38"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="60" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/github.png'" [showImage]="true" [imageHeight]="30" [imageWidth]="50"
+      [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+  <div>
+    <circle-progress [percent]="60" [radius]="30" [outerStrokeWidth]="4" [innerStrokeWidth]="2"
+      [outerStrokeColor]="'#0F2027'" [innerStrokeColor]="'#fc4a1a'" [animation]="true" [animationDuration]="1000"
+      [showSubtitle]="false" [imageSrc]="'./assets/springboot.png'" [showImage]="true" [imageHeight]="30"
+      [imageWidth]="60" [backgroundColor]="'#cbdfe6 '">
+    </circle-progress>
+  </div>
+</section>

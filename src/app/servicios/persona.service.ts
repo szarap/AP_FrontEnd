@@ -72,7 +72,7 @@ export class PersonaService {
 
     //METODOS PARA EL CRUD DE Proyectos 
 
-    getListProyecto():Observable<any>{
+    getProyectos():Observable<any>{
       return this.http.get(this.ApiurlProyecto + "ver");      
     } 
 
