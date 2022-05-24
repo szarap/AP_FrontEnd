@@ -1,4 +1,4 @@
-.card {
+/* .card {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,13 +18,13 @@
 }
 .card:hover .image img {
     opacity: .5;
-    transform: translateX(30%);/*100%*/
+    transform: translateX(30%);
 }
 .card .details {
     position: absolute;
     top: 0;
     left: 0;
-    width: 70%;/*100%*/
+    width: 70%;
     height: 100%;
     background: #ffc107;
     transition: .5s;
@@ -84,4 +84,4 @@
 }
 .container{
     margin: 0;
-}
+} */

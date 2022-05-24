@@ -1,17 +1,17 @@
 <!--------------------------------------------- card acerca de mi -->
-<div class="container">
+<div class="container_info">
   <div class="container_content">
     <div class="container_content_inner">
       <div class="title">
-        <h1>Acerca de mi...</h1>
+        <h1>Sobre mi</h1>
       </div>
       <div class="par">
+        <p>Programador</p>
         <p>Fisioterapeuta</p>
         <p>Osteopata</p>
-        <p>Programador</p>
-        <p class="card-text">Curioso</p>
-        <p class="card-text">Inquieto</p>
-        <p class="card-text">Amante del Deporte y la Naturaleza</p>
+        <p>Curioso</p>
+        <p>Inquieto</p>
+        <p>Amante del Deporte y la Naturaleza</p>
         <p><a href="#educ">Educaciones</a></p>
         <p><a href="#expel">Experiencia Laboral</a></p>
       </div>
@@ -27,7 +27,7 @@
 <!-- ---------------------------------------------------fin card acerca de mi -->
 
 <!-- inicio tabla educacion -->
-<article>
+<article id="educ" >
   <h2>Educacion <i class="fa-regular fa-pen-to-square text-info" data-bs-toggle="modal" data-bs-target="#exampleModal4"
       *ngIf="ulogged != ''"></i></h2>
 
@@ -68,17 +68,17 @@
 <div class="modal fade" id="exampleModal4" data-bs-backdrop="static"
   data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content ">
+  <div class="modal-dialog">
+    <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">educacion</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Educacion</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card body">
+            <div class="">
+              <div class="">
+                <div class="">
                   <h5 class="titulo">{{ accion | uppercase }} Educacion</h5>
 
                   <form [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
