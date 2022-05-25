@@ -243,10 +243,11 @@ h1{
     animation: slideIn 1.5s ease-in-out forwards;
 }
 
-.par {
+/* .par {
     height: auto;
     overflow: hidden;
-}
+} */
+
 
 p{
     line-height: 28px;
@@ -451,6 +452,9 @@ h1 {
 }
 .fade{
     background-color: #2c53649a;
+}
+.btn{
+    color: #f8f8f8;
 }
 
 /* Proyectos */
