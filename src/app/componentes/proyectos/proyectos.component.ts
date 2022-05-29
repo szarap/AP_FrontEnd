@@ -26,10 +26,10 @@ export class ProyectosComponent implements OnInit {
               
     this.formulario = this.fb.group({
       nombreExperiencia:['', Validators.required],
-      fechaInicio:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      fechaFin:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      descripcion:['', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]],
-      trabajos:['', [Validators.required,Validators.maxLength(11),Validators.minLength(9)]]
+      fechaInicio:['', Validators.required],
+      fechaFin:['', Validators.required],
+      descripcion:['', Validators.required],
+      trabajos:['', Validators.required]
     })
   }
 

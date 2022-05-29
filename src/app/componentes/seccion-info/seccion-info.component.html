@@ -6,14 +6,12 @@
         <h1>Sobre mi</h1>
       </div>
       <div class="par">
-        <p>Programador</p>
-        <p>Fisioterapeuta</p>
-        <p>Osteopata</p>
-        <p>Curioso</p>
-        <p>Inquieto</p>
-        <p>Amante del Deporte y la Naturaleza</p>
-        <p><a href="#educ">Educaciones</a></p>
-        <p><a href="#expel">Experiencia Laboral</a></p>
+        <p class="a">Programador</p>
+        <p class="b">Fisioterapeuta</p>
+        <p class="c">Osteopata</p>
+        <p class="d">Me llamo P>blo y vivo en Argentina, hace casi dos años empece en este mundo nuevo para mi, lleno de preguntas pero dispuesto a encontrar sus respuestas.
+          Soy curioso, inquieto, amante de la naturaleza y el deporte.  
+        </p>
       </div>
     </div>
   </div>
@@ -72,18 +70,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Educacion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body">
           <div class="row">
             <div class="">
               <div class="">
-                <div class="">
+                <div>
                   <h5 class="titulo">{{ accion | uppercase }} Educacion</h5>
 
-                  <form [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
-                    <!-- div nombre -->
-                    <div class="input-group input-group-lg mb-3">
+                  <form class="example-form" [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
+                    
+                    <!--  <div class="input-group input-group-lg mb-3">
                       <span class="input-group-text">
                         <i class="fa-solid fa-user" [class.green-icon]="
                           this.educations.get('nombre')?.valid
@@ -94,10 +92,44 @@
                       </span>
                       <input formControlName="nombre" type="text" class="form-control"
                         placeholder="Nombre de la educacion" />
-                    </div>
+                    </div> -->
+
+                  <!-- div nombre -->  
+                  <div>
+                    <mat-form-field appearance="legacy">
+                      <mat-label>Nombre</mat-label>
+                      <input matInput formControlName="nombre" type="text" 
+                      placeholder="Nombre de la educacion">
+                    </mat-form-field>
+                  </div>
+
+                  <!-- fechas -->
+                  <div>
+                    <mat-form-field appearance="legacy">
+                      <mat-label>Ingrese un rango de fechas</mat-label>
+                      <mat-date-range-input formControlName="fechaInicio" [rangePicker]="picker">
+                        <input matStartDate formControlName="fechaInicio" placeholder="Start date">
+                        <input matEndDate formControlName="fechaFin" placeholder="End date">
+                      </mat-date-range-input>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-date-range-picker #picker></mat-date-range-picker>
+                    </mat-form-field>
+                  </div>
+
+                  <!--- div tipo de educacion --> 
+                  <mat-form-field appearance="legacy">
+                    <mat-label>Tipo de Educacion</mat-label>
+                    <mat-select formControlName="tipoEducacion" >
+                      <mat-option *ngFor="let eleccion of tipoeducaciones" [value]="eleccion">
+                        {{eleccion.nombretedu}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                    
 
                     <!-- div fecha inicio -->
-                    <div class="input-group input-group-lg mb-3">
+                <!--     <div class="input-group input-group-lg mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
                           this.educations.get('fechaInicio')?.valid
                         " [class.red-icon]="
@@ -107,10 +139,10 @@
                         </i></span>
                       <input formControlName="fechaInicio" type="date" maxlength="10" class="form-control"
                         placeholder="aaaa-mm-dd" />
-                    </div>
+                    </div> -->
 
                     <!-- div fecha fin -->
-                    <div class="input-group input-group-lg mb-3">
+                <!--    <div class="input-group input-group-lg mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
                           this.educations.get('fechaFin')?.valid
                         " [class.red-icon]="
@@ -120,10 +152,9 @@
                         </i></span>
                       <input formControlName="fechaFin" type="date" maxlength="10" class="form-control"
                         placeholder="aaaa-mm-dd" />
-                    </div>
-    
-                    <!--------------------- div tipo de educacion -->    
-                    <div class="input-group input-group-lg mb-3">
+                    </div> -->
+
+                  <!--  <div class="input-group input-group-lg mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-briefcase" [class.green-icon]="
                           this.educations.get('tipoEducacion')?.valid
                         " [class.red-icon]="
@@ -131,7 +162,7 @@
                           this.educations.get('tipoEducacion')?.touched
                         ">
                         </i></span>
-                            
+                      
                       <select formControlName="tipoEducacion">
                         <option [ngValue]="null">
                           Elija tipo de educacion</option>
@@ -139,14 +170,22 @@
                           {{ eleccion.nombretedu }}    
                         </option>
                       </select>
-                    </div>
+                    </div> -->
     
+                    <!--div boton aceptar -->
+                    <!-- <mat-divider></mat-divider> -->
+              <!--  <section>
+                      <div class="example-button-row">                       
+                        <button mat-stroked-button color="primary" type="submit">Agregar</button>    
+                      </div>
+                    </section> -->
+
                     <!--div boton aceptar -->
                     <div class="d-grid gap-2">
                       <button [disabled]="this.educations.invalid" type="submit" class="btn btn-success btn-lg">
                         <i class="fa-solid fa-database"></i>&nbsp; Aceptar
                       </button>
-                    </div>
+                    </div> 
                   </form>
                 </div>
               </div>

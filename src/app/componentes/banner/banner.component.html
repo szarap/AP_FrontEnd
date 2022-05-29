@@ -1,18 +1,16 @@
 
-         
-         <section class="banner">
-           <img class="perfil__foto" src="../assets/foto_perfil-cut.jpg"alt="foto perfil">
-            <article class=" item__position">
-                <div *ngFor="let datos of databanner">   <!-- class="perfil__texto"    -->              
-                    <p class="p1"><span class="p2">H</span>ola! Soy,</p>                     
-                    <p class="p3">{{datos.nombre}}</p>                     
-                    <p class="p4">{{datos.apellido}}</p>
-                    <p class="p5">Programador Full Stack Jr</p>                
-                </div>                
-            </article>
-          </section>
-
-<!-- Modal  banner-->
+      <!-- seccion banner  -->
+      <section class="banner">
+          <img class="perfil__foto" src="../assets/foto_perfil-cut.jpg"alt="foto perfil">
+          <article class=" item__position">
+              <div *ngFor="let datos of databanner">               
+                  <p class="p1"><span class="p2">H</span>ola! Soy,</p>                     
+                  <p class="p3">{{datos.nombre}}</p>                     
+                  <p class="p4">{{datos.apellido}}</p>
+                  <p class="p5">Programador Full Stack Jr</p>                
+              </div>                
+          </article>
+        </section>
 
 
 

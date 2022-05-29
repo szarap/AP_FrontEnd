@@ -7,7 +7,7 @@
         <h5 class="modal-title" id="staticBackdropLabel">
           Experiencia Laboral
         </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -18,7 +18,7 @@
   
                 <form [formGroup]="formulario" (ngSubmit)="guardarExperiencia()">
                   <!-- div nombre -->
-                  <div class="input-group input-group-lg mb-3">
+        <!--           <div class="input-group input-group-lg mb-3">
                     <span class="input-group-text">
                       <i class="fa-solid fa-user" [class.green-icon]="
                           this.formulario.get('nombreExperiencia')?.valid
@@ -29,10 +29,19 @@
                     </span>
                     <input formControlName="nombreExperiencia" type="text" class="form-control"
                       placeholder="Nombre de la experiencia" />
+                  </div> -->
+
+                  <!-- div nombre -->
+                  <div>
+                    <mat-form-field appearance="legacy">
+                      <mat-label>nueva experiencia</mat-label>
+                      <input matInput formControlName="nombreExperiencia" type="text" 
+                      placeholder="escriba la experiencia">
+                    </mat-form-field>
                   </div>
-  
+
                   <!-- div fecha inicio -->
-                  <div class="input-group input-group-lg mb-3">
+    <!--               <div class="input-group input-group-lg mb-3">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
                           this.formulario.get('fechaInicio')?.valid
                         " [class.red-icon]="
@@ -42,10 +51,23 @@
                       </i></span>
                     <input formControlName="fechaInicio" type="date" maxlength="10" class="form-control"
                       placeholder="aaaa-mm-dd" />
-                  </div>
+                  </div> -->
+
+                     <!-- fechas -->
+                     <div>
+                      <mat-form-field appearance="legacy">
+                        <mat-label>Ingrese un rango de fechas</mat-label>
+                        <mat-date-range-input formControlName="fechaInicio" [rangePicker]="picker">
+                          <input matStartDate formControlName="fechaInicio" placeholder="Start date">
+                          <input matEndDate formControlName="fechaFin" placeholder="End date">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-date-range-picker #picker></mat-date-range-picker>
+                      </mat-form-field>
+                    </div>
   
                   <!-- div fecha fin -->
-                  <div class="input-group input-group-lg mb-3">
+               <!--    <div class="input-group input-group-lg mb-3">
                     <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
                           this.formulario.get('fechaFin')?.valid
                         " [class.red-icon]="
@@ -55,10 +77,10 @@
                       </i></span>
                     <input formControlName="fechaFin" type="date" maxlength="10" class="form-control"
                       placeholder="aaaa-mm-dd" />
-                  </div>
+                  </div> -->
   
                   <!-- div descripcion -->
-                  <div>
+                <!--  <div>
                     <div class="input-group input-group-lg mb-3">
                       <span class="input-group-text"><i class="fa-solid fa-circle-info" [class.green-icon]="
                             this.formulario.get('descripcion')?.valid
@@ -69,10 +91,29 @@
                         </i></span>
                       <input formControlName="descripcion" type="text" class="form-control" placeholder="descripcion" />
                     </div>
-                  </div>
-  
+                  </div> -->
+
+                    <!-- div descripcion -->
+                    <div>
+                      <mat-form-field appearance="legacy">
+                        <mat-label>descripcion</mat-label>
+                        <input matInput formControlName="descripcion" type="text" 
+                        placeholder="escriba la descripcion">
+                      </mat-form-field>
+                    </div>
+
                   <!-- div tipo de trabajo -->
-                  <div class="input-group input-group-lg mb-3">
+                  <mat-form-field appearance="legacy">
+                    <mat-label>Tipo de Trabajo</mat-label>
+                    <mat-select formControlName="trabajos" >
+                      <mat-option *ngFor="let eleccion of tipotrabajo" [value]="eleccion">
+                        {{eleccion.tipotrabajo}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+              <!--     <div class="input-group input-group-lg mb-3">
                     <span class="input-group-text"><i class="fa-solid fa-briefcase" [class.green-icon]="
                           this.formulario.get('trabajos')?.valid
                         " [class.red-icon]="
@@ -87,7 +128,7 @@
                         {{ eleccion.tipotrabajo }}
                       </option>
                     </select>
-                  </div>
+                  </div> -->
   
                   <!--div boton aceptar -->
                   <div class="d-grid gap-2">

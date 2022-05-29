@@ -31,9 +31,9 @@ export class SeccionInfoComponent implements OnInit {
     
     this.educations = this.edu.group({
       nombre:['', Validators.required],
-      fechaInicio:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      fechaFin:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      tipoEducacion:['', [Validators.required, Validators.maxLength(12), Validators.minLength(9)]],
+      fechaInicio:['', Validators.required],
+      fechaFin:['', Validators.required],
+      tipoEducacion:['', Validators.required],
     })
 
   }

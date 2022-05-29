@@ -2,11 +2,6 @@
 :root{
     --main-font: 'Anybody', cursive;
     --font-size: 16px;
-    /* --main-color:#630606;
-    --second-color:#890F0D;
-    --main-modal-color: #E83A14;
-    --second-modal-color: #D9CE3F;
-    --container-width: 1200px; */
 } 
 
 html{
@@ -56,6 +51,10 @@ img{
     color: aliceblue;
     font-size: 1.2em;
 }
+.btn_Login{
+/*  color: #1D1D1D; */
+ background-color: #1D1D1D;   
+}
 
 /* -------------------- Posicionamiento de la grilla --------------------- */ 
 
@@ -93,16 +92,16 @@ display: flex;
 justify-content: center;
 font-size: 1em;
 }
+
 .form-label{
     text-shadow: none;
-    /* color: #0B486B; */
-    color: #f8f8f8;
+    color:#1D1D1D;
 }
 
 /*------------------ hijo 1*/
-.item__logo{
+/* .item__logo{
     
-}
+} */
 /*------------------ hijo 2  */ 
 .fa-facebook{
     color: rgb(14,142,241);
@@ -127,10 +126,12 @@ font-size: 1em;
     font-size: 2rem;
     color: #000;
 }
+
 /*------------------ hijo 3 */
 .item .item__3{
     padding-left: 20%;
 }
+
 /*------------------ hijo 4 --- banner*/
 .banner {
     background: #0F2027;  
@@ -142,8 +143,8 @@ font-size: 1em;
 }
 
 .item__position{
-    position: absolute;
-    top: 33vh;
+    position: relative;
+    top: -39vh;
     left: 50%;
     color: #FFF;
 }
@@ -190,7 +191,8 @@ font-size: 1em;
 .fa-regular{
     cursor: pointer;
 }
- .green-icon{
+
+.green-icon{
     color:#198754;
 } 
 .red-icon{
@@ -210,11 +212,8 @@ h2{
 /* acerca de */
 .container_info {
     display: flex;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 2vh;
     margin-bottom: 5vh;
-    padding-top: 10vh;
     justify-content: space-between;
     align-items: center;
     color:#f7f7f9;
@@ -223,18 +222,63 @@ h2{
     position: relative;
     transition: all .8s ease;
     font-family: var(--main-font);
+    font-size: 1em;
+    text-shadow: 2px 5px 3px rgba(44, 83, 100, 0.53);
 }
 
-h1{
+.title h1{
     position: absolute;
-    left: 10vw;
-    top: 2vh;
-
+    font-size: 2.7em;
+    left: 0;
+    padding-left: 1vw;
+    top: 10vh;
+    z-index: 1000;
 }
-    
+
+.par{
+    font-size: 1.5em;
+}
+
+.a{
+    position: absolute;
+    z-index: 1000;
+    left: 78%;
+    top: 20vh;
+    color: #1D1D1D;
+    text-shadow: 2px 5px 3px rgba(44, 83, 100, 0.53);
+}
+
+.b{
+    position: absolute;
+    z-index: 1000;
+    left: 82%;
+    top: 37vh;
+    color: #1D1D1D;
+    text-shadow: 2px 5px 3px rgba(44, 83, 100, 0.53);
+}
+
+.c{
+    position: absolute;
+    z-index: 1000;
+    left: 78%;
+    top: 56vh;
+    color: #1D1D1D;
+    text-shadow: 2px 5px 3px rgba(44, 83, 100, 0.53);
+}
+
+.d{
+    position: absolute;
+    z-index: 998;
+    left: 0;
+    padding-left: 2vw;
+    padding-top: 10%;
+    color: #f8f8f8;
+    text-shadow: 2px 5px 3px rgba(44, 83, 100, 0.53);
+}
+
 .container_content_inner {
         width: 80%;
-        margin-left: 80px;
+        margin-left: 10vw;
 } 
         
 .container_img {
@@ -243,17 +287,17 @@ h1{
     animation: slideIn 1.5s ease-in-out forwards;
 }
 
-/* .par {
+.par {
     height: auto;
     overflow: hidden;
-} */
-
+} 
 
 p{
     line-height: 28px;
     transform: translateY(300px);
     animation: slideUp .8s ease-in-out forwards .8s;
 }
+
 p a{
     text-decoration: none;
     color: #fff;
@@ -352,7 +396,7 @@ h1 {
     font-size: 0.75rem;
 }
 
- .fl-table thead th {
+.fl-table thead th {
     color: #ffffff;
     background: #fc4a1a;  
     background: -webkit-linear-gradient(to top, #f7b733, #fc4a1a); 
@@ -427,9 +471,6 @@ h1 {
         box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
         background-color: #1D1D1D;
     }
-    .fl-table tr td:nth-child(even) {
-    
-    }
     .fl-table tbody td {
         display: block;
         text-align: center;
@@ -438,24 +479,35 @@ h1 {
 
 /* Modal estilo */
 .modal-content{
-    background-color: #1D1D1D;
+   /*  background-color: #1D1D1D; */
+    /* color: #f8f8f8; */
+ 
+
+}
+.modal-title{
     color: #f8f8f8;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
 }
 
 .modal-header{
     font-size: 0.5em;
     height: 1px;
-    background-color: #1D1D1D;
+    background-color: #1D1D1D; 
 }
 .btn-close{
     border: #f8f8f8 solid 0.5px;
 }
-.fade{
-    background-color: #2c53649a;
-}
+
 .btn{
     color: #f8f8f8;
 }
+
+mat-date-range-input{
+    color: #00000038;
+}
+
 
 /* Proyectos */
 
@@ -466,7 +518,7 @@ h1 {
     gap: 1.5rem;
     margin-bottom: 5vh;
     margin-left: 13vw;
-    margin-right: 5vw;    
+    margin-right: 5vw;
 }
 
 .card{
@@ -474,12 +526,16 @@ h1 {
     flex-direction: column;
     align-items: center;
     background-color: #1D1D1D;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 ); 
-    font-family: var(--main-font); 
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );      font-family: var(--main-font); 
     color: #f8f8f8;
     padding: 0;
     margin: 0.5 vh, 0, 0, 0;
-    height: 10rem; 
+    height: 10rem;   
+    
+}
+
+.card img{
+    height: 7rem;
 }
 
 #bed_card{
@@ -487,6 +543,7 @@ position: absolute;
 right: 2.5vw;
 bottom: 0;
 margin: 0;
+height: 3rem;
 }
 
 #bel_card{
@@ -494,6 +551,7 @@ position: absolute;
 right: 0.5vw;
 bottom: 0;
 margin: 0;
+height: 3rem;
 }
 
 .card-body{

@@ -18,7 +18,12 @@ import { FormedicionComponent } from './componentes/formedicion/formedicion.comp
 import { PersonaService } from './servicios/persona.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormedicionComponent,
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,13 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatSelectModule
   
   ],
   providers: [CookieService, PersonaService], 

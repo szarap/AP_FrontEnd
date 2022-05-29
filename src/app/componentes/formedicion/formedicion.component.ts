@@ -17,7 +17,6 @@ export class FormedicionComponent implements OnInit {
   listdeproyectos: any[]=[];
   id:number | undefined;
 
-
   constructor(private _personaService:PersonaService,
               private pro: FormBuilder,  
               private toastr: ToastrService, 
@@ -26,8 +25,8 @@ export class FormedicionComponent implements OnInit {
     
       this.proy = this.pro.group({
       nombre:['', Validators.required],
-      fechaFin:['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      fotoproyecto:['', [Validators.required, Validators.maxLength(50), Validators.minLength(5)]],
+      fechaFin:['', Validators.required],
+      fotoproyecto:['', Validators.required],
     })
 
   }
@@ -81,7 +80,7 @@ export class FormedicionComponent implements OnInit {
 
   eliminarProyecto(id: number){
     this._personaService.deleteProyecto(id).subscribe(data =>{
-      this.toastr.error('El Proyecto fue eliminado con exito! ', 'Experiencia Elimininada');
+      this.toastr.error('El Proyecto fue eliminado con exito! ', 'Proyecto Elimininado');
       this.getProyectos();
     })
   }
