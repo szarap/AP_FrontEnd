@@ -1,6 +1,9 @@
 {
   "name": "porfolio-pablo-gonzalez",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.11.1"
+    },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
