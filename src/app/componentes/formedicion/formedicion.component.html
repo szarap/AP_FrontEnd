@@ -44,7 +44,7 @@
             <!-- div nombre -->
             <div>
               <mat-form-field appearance="legacy">
-                <mat-label>nueva proyecto</mat-label>
+                <mat-label>nuevo proyecto</mat-label>
                 <input matInput formControlName="nombre" type="text" 
                 placeholder="escriba el proyecto">
               </mat-form-field>
@@ -54,7 +54,7 @@
                 <div>
                   <mat-form-field appearance="legacy">
                     <mat-label>Ingrese un rango de fechas</mat-label>
-                    <mat-date-range-input formControlName="fechaInicio" [rangePicker]="picker">
+                    <mat-date-range-input [rangePicker]="picker">
                       <input matStartDate formControlName="fechaInicio" placeholder="Start date">
                       <input matEndDate formControlName="fechaFin" placeholder="End date">
                     </mat-date-range-input>

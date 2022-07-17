@@ -81,19 +81,6 @@
 
                   <form class="example-form" [formGroup]="educations" (ngSubmit)="guardarEducaciones()">
                     
-                    <!--  <div class="input-group input-group-lg mb-3">
-                      <span class="input-group-text">
-                        <i class="fa-solid fa-user" [class.green-icon]="
-                          this.educations.get('nombre')?.valid
-                        " [class.red-icon]="
-                          this.educations.get('nombre')?.invalid &&
-                          this.educations.get('nombre')?.touched
-                        "></i>
-                      </span>
-                      <input formControlName="nombre" type="text" class="form-control"
-                        placeholder="Nombre de la educacion" />
-                    </div> -->
-
                   <!-- div nombre -->  
                   <div>
                     <mat-form-field appearance="legacy">
@@ -107,7 +94,7 @@
                   <div>
                     <mat-form-field appearance="legacy">
                       <mat-label>Ingrese un rango de fechas</mat-label>
-                      <mat-date-range-input formControlName="fechaInicio" [rangePicker]="picker">
+                      <mat-date-range-input [rangePicker]="picker">
                         <input matStartDate formControlName="fechaInicio" placeholder="Start date">
                         <input matEndDate formControlName="fechaFin" placeholder="End date">
                       </mat-date-range-input>
@@ -126,60 +113,6 @@
                     </mat-select>
                   </mat-form-field>
                   
-                    
-
-                    <!-- div fecha inicio -->
-                <!--     <div class="input-group input-group-lg mb-3">
-                      <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
-                          this.educations.get('fechaInicio')?.valid
-                        " [class.red-icon]="
-                          this.educations.get('fechaInicio')?.invalid &&
-                          this.educations.get('fechaInicio')?.touched
-                        ">
-                        </i></span>
-                      <input formControlName="fechaInicio" type="date" maxlength="10" class="form-control"
-                        placeholder="aaaa-mm-dd" />
-                    </div> -->
-
-                    <!-- div fecha fin -->
-                <!--    <div class="input-group input-group-lg mb-3">
-                      <span class="input-group-text"><i class="fa-solid fa-calendar-days" [class.green-icon]="
-                          this.educations.get('fechaFin')?.valid
-                        " [class.red-icon]="
-                          this.educations.get('fechaFin')?.invalid &&
-                          this.educations.get('fechaFin')?.touched
-                        ">
-                        </i></span>
-                      <input formControlName="fechaFin" type="date" maxlength="10" class="form-control"
-                        placeholder="aaaa-mm-dd" />
-                    </div> -->
-
-                  <!--  <div class="input-group input-group-lg mb-3">
-                      <span class="input-group-text"><i class="fa-solid fa-briefcase" [class.green-icon]="
-                          this.educations.get('tipoEducacion')?.valid
-                        " [class.red-icon]="
-                          this.educations.get('tipoEducacion')?.invalid &&
-                          this.educations.get('tipoEducacion')?.touched
-                        ">
-                        </i></span>
-                      
-                      <select formControlName="tipoEducacion">
-                        <option [ngValue]="null">
-                          Elija tipo de educacion</option>
-                        <option *ngFor="let eleccion of tipoeducaciones " [ngValue]="eleccion">
-                          {{ eleccion.nombretedu }}    
-                        </option>
-                      </select>
-                    </div> -->
-    
-                    <!--div boton aceptar -->
-                    <!-- <mat-divider></mat-divider> -->
-              <!--  <section>
-                      <div class="example-button-row">                       
-                        <button mat-stroked-button color="primary" type="submit">Agregar</button>    
-                      </div>
-                    </section> -->
-
                     <!--div boton aceptar -->
                     <div class="d-grid gap-2">
                       <button [disabled]="this.educations.invalid" type="submit" class="btn btn-success btn-lg">
