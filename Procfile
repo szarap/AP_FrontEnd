@@ -1,1 +1,1 @@
-web:java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/demo-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* https://porfolio-pablo-gonzalez.herokuapp.com/
