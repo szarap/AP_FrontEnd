@@ -1,6 +1,5 @@
 {
     "/api/*":{
-        "start": "node index.js",
         "target":"http://localhost:8080",
         "secure":false,
         "logLevel":"debug"
