@@ -14,7 +14,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class BannerComponent implements OnInit {
 
   ulogged:String=""; 
-  rutaapi= "/api/persona";
+  rutaapi= "https://porfolio-ap-pablo.herokuapp.com/api/persona";
   databanner: any=""; 
 
   constructor(private Http:HttpClient, private LoginService:LoginService, private routes:Router, private persona:PersonaService) { 
