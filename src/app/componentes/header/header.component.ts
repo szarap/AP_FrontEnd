@@ -13,7 +13,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class HeaderComponent implements OnInit {
  
   ulogged:String="";
-  rutaapi= "https://porfolio-ap-pablo.herokuapp.com/api/persona";
+  rutaapi= "https://porfolio-ap-pablo.herokuapp.com/api/persona/";
   databanner: any="";
 
 
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
               private routes:Router,
               private _personaService:PersonaService) {
 
-    Http.get(this.rutaapi + "/ver").subscribe(data=>{
+    Http.get(this.rutaapi+"ver").subscribe(data=>{
       //console.log(data);
       this.databanner=data;
     })

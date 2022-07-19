@@ -9,12 +9,12 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginService {
 
-  private url="https://porfolio-ap-pablo.herokuapp.com/api/user/"
+  private url="https://porfolio-ap-pablo.herokuapp.com/api/user"
 
   constructor(private http:HttpClient, private cookies:CookieService) { }
   
   login(user: any): Observable<any> {
-    return this.http.post(this.url+"login", user);
+    return this.http.post(this.url+"/login", user);
   } 
 
   getUser(id:number):Observable<any>{
