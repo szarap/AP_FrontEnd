@@ -1,3 +1,9 @@
-
+{
+    "/api/*":{
+        "target":"https://porfolio-ap-pablo.herokuapp.com",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}
 
 

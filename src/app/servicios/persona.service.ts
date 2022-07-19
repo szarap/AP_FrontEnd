@@ -11,11 +11,11 @@ import { BehaviorSubject } from 'rxjs';
 
 export class PersonaService {
 
-  private ApiurlExp="https://porfolio-ap-pablo.herokuapp.com/api/experienciaLaboral/";
-  private ApiurlEdu="https://porfolio-ap-pablo.herokuapp.com/api/educacion/";
-  private ApiurlTipoTrab="https://porfolio-ap-pablo.herokuapp.com/api/tipoTrabajo/";
-  private ApiurlTipoEdu="https://porfolio-ap-pablo.herokuapp.com/api/tipoEducacion/";
-  private ApiurlProyecto="https://porfolio-ap-pablo.herokuapp.com/api/proyecto/";
+  private ApiurlExp="/api/experienciaLaboral/";
+  private ApiurlEdu="/api/educacion/";
+  private ApiurlTipoTrab="/api/tipoTrabajo/";
+  private ApiurlTipoEdu="/api/tipoEducacion/";
+  private ApiurlProyecto="/api/proyecto/";
 
   
   constructor(private http: HttpClient,  

@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginService {
 
-  private url="https://porfolio-ap-pablo.herokuapp.com/api/user"
+  private url="/api/user"
 
   constructor(private http:HttpClient, private cookies:CookieService) { }
   
