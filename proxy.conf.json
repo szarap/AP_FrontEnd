@@ -1,9 +1,8 @@
 {
     "/api/*":{
-        "target":"https://porfolio-ap-pablo.herokuapp.com",
+        "target":"http://localhost:8080",
         "secure":false,
         "logLevel":"debug"
     }
 }
-
 
