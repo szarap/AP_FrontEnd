@@ -25,7 +25,7 @@ export class PersonaService {
     //METODOS PARA EL CRUD DE LA EXPERIENCIA LABORAL
 
     getListExperiencias():Observable<any>{
-      return this.http.get(this.ApiurlExp+ "ver");
+      return this.http.get(this.ApiurlExp+"ver");
     }
 
     deleteExperiencia(id: number):Observable<any>{
@@ -43,14 +43,14 @@ export class PersonaService {
   //get del tipo de trabajo para relacionar las tablas
 
     gettipoTrabajo():Observable<any>{
-    return this.http.get(this.ApiurlTipoTrab+ "ver");
+    return this.http.get(this.ApiurlTipoTrab+"ver");
     }
   
 
   //METODOS PARA EL CRUD DE EDUCACION
 
     getListEducacion():Observable<any>{
-      return this.http.get(this.ApiurlEdu + "ver");      
+      return this.http.get(this.ApiurlEdu+"ver");      
     } 
 
     deleteEducacion(id: number):Observable<any>{
@@ -58,7 +58,7 @@ export class PersonaService {
     }
 
     saveEducacion(educacion: String): Observable<any>{
-      return this.http.post(this.ApiurlEdu + "new", educacion);
+      return this.http.post(this.ApiurlEdu +"new", educacion);
     }
 
     updateEducacion (id: number, educacion: any): Observable<any>{
@@ -67,13 +67,13 @@ export class PersonaService {
 
     //metodo para el tipo de educacion
     gettipoEducacion():Observable<any>{
-    return this.http.get(this.ApiurlTipoEdu + "ver");
+    return this.http.get(this.ApiurlTipoEdu+"ver");
     } 
 
     //METODOS PARA EL CRUD DE Proyectos 
 
     getProyectos():Observable<any>{
-      return this.http.get(this.ApiurlProyecto + "ver");      
+      return this.http.get(this.ApiurlProyecto+"ver");      
     } 
 
     deleteProyecto(id: number):Observable<any>{
