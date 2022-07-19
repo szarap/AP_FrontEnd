@@ -11,11 +11,11 @@ import { BehaviorSubject } from 'rxjs';
 
 export class PersonaService {
 
-  private ApiurlExp="/api/experienciaLaboral/";
-  private ApiurlEdu="/api/educacion/";
-  private ApiurlTipoTrab="/api/tipoTrabajo/";
-  private ApiurlTipoEdu="/api/tipoEducacion/";
-  private ApiurlProyecto="/api/proyecto/";
+  private ApiurlExp="/api/experienciaLaboral/"
+  private ApiurlEdu="/api/educacion/"
+  private ApiurlTipoTrab="/api/tipoTrabajo/"
+  private ApiurlTipoEdu="/api/tipoEducacion/"
+  private ApiurlProyecto="/api/proyecto/"
 
   
   constructor(private http: HttpClient,  
