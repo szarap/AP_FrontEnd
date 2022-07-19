@@ -17,8 +17,8 @@ export class PersonaService {
   private ApiurlTipoEdu="https://porfolio-ap-pablo.herokuapp.com/api/tipoEducacion/"
   private ApiurlProyecto="https://porfolio-ap-pablo.herokuapp.com/api/proyecto/" */
 
-  private api="/api/"
-  /* private api="https://porfolio-ap-pablo.herokuapp.com/api/" */
+  /* private api="/api/" */
+  private api="https://porfolio-ap-pablo.herokuapp.com/api/" 
 
   
   constructor(private http: HttpClient,  
