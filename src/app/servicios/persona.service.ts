@@ -29,15 +29,15 @@ export class PersonaService {
     }
 
     deleteExperiencia(id: number):Observable<any>{
-      return this.http.delete(this.ApiurlExp + "delete/" + id);
+      return this.http.delete(this.ApiurlExp+"delete/"+id);
     }
 
     saveExperiencia(experiencia: String): Observable<any>{
-      return this.http.post(this.ApiurlExp + "new", experiencia);
+      return this.http.post(this.ApiurlExp+"new", experiencia);
     }
 
     updateExperiencia (id: number, experiencia: any): Observable<any>{
-    return this.http.put(this.ApiurlExp + "editar", experiencia);
+    return this.http.put(this.ApiurlExp+"editar", experiencia);
   }
 
   //get del tipo de trabajo para relacionar las tablas
@@ -54,15 +54,15 @@ export class PersonaService {
     } 
 
     deleteEducacion(id: number):Observable<any>{
-      return this.http.delete(this.ApiurlEdu + "delete/" + id);
+      return this.http.delete(this.ApiurlEdu+"delete/"+id);
     }
 
     saveEducacion(educacion: String): Observable<any>{
-      return this.http.post(this.ApiurlEdu +"new", educacion);
+      return this.http.post(this.ApiurlEdu+"new", educacion);
     }
 
     updateEducacion (id: number, educacion: any): Observable<any>{
-      return this.http.put(this.ApiurlEdu + "editar", educacion);
+      return this.http.put(this.ApiurlEdu+"editar", educacion);
     }
 
     //metodo para el tipo de educacion
@@ -77,15 +77,15 @@ export class PersonaService {
     } 
 
     deleteProyecto(id: number):Observable<any>{
-      return this.http.delete(this.ApiurlProyecto + "delete/" + id);
+      return this.http.delete(this.ApiurlProyecto+"delete/"+id);
     }
 
     saveProyecto(proyecto: String): Observable<any>{
-      return this.http.post(this.ApiurlProyecto + "new", proyecto);
+      return this.http.post(this.ApiurlProyecto+"new", proyecto);
     }
 
     updateProyecto(id: number, proyecto: any): Observable<any>{
-      return this.http.put(this.ApiurlProyecto + "editar", proyecto);
+      return this.http.put(this.ApiurlProyecto+"editar", proyecto);
     }
 
 }
