@@ -13,7 +13,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class HeaderComponent implements OnInit {
  
   ulogged:String="";
-  rutaapi= "/api/persona/";
+  rutaapi= "api/persona/";
   databanner: any="";
 
 
